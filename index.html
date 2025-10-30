@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Journal - Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">LearnJournal</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="journal.html" class="nav-link">Journal</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title fade-in">Welcome to My Learning Journey</h1>
+                <p class="hero-subtitle fade-in-delay">Documenting progress, one week at a time</p>
+                <div class="hero-buttons fade-in-delay-2">
+                    <a href="journal.html" class="btn btn-primary">View Journal</a>
+                    <a href="projects.html" class="btn btn-secondary">Explore Projects</a>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <div class="floating-card card-1"></div>
+                <div class="floating-card card-2"></div>
+                <div class="floating-card card-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Card -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-card glass-effect">
+                <div class="profile-image">
+                    <div class="avatar-placeholder">👨‍💻</div>
+                </div>
+                <div class="profile-info">
+                    <h2 class="profile-name">Your Name</h2>
+                    <p class="profile-title">Full Stack Developer & Lifelong Learner</p>
+                    <p class="profile-description">
+                        Welcome to my learning journal! This is where I document my journey through various technologies, 
+                        projects, and skills. Each week, I challenge myself to learn something new and share my experiences, 
+                        insights, and the projects I build along the way.
+                    </p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">14</span>
+                            <span class="stat-label">Weeks</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Skills Learned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="section-title">What You'll Find Here</h2>
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <div class="intro-icon">📝</div>
+                    <h3>Weekly Journals</h3>
+                    <p>Detailed entries documenting my learning progress, challenges faced, and solutions discovered each week.</p>
+                </div>
+                <div class="intro-card">
+                    <div class="intro-icon">💻</div>
+                    <h3>Projects Showcase</h3>
+                    <p>A collection of projects I've built while learning, from simple experiments to complex applications.</p>
+                </div>
+                <div class="intro-card">
+                    <div class="intro-icon">🚀</div>
+                    <h3>Skills & Growth</h3>
+                    <p>Track my progress across various technologies, frameworks, and development practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Entries Preview -->
+    <section class="recent-section">
+        <div class="container">
+            <h2 class="section-title">Recent Journal Entries</h2>
+            <div class="recent-grid">
+                <div class="recent-card">
+                    <div class="recent-header">
+                        <span class="recent-week">Week 14</span>
+                        <span class="recent-date">Oct 2024</span>
+                    </div>
+                    <h3 class="recent-title">Advanced React Patterns</h3>
+                    <p class="recent-excerpt">Exploring custom hooks, context API, and performance optimization techniques...</p>
+                    <a href="journal.html" class="recent-link">Read More →</a>
+                </div>
+                <div class="recent-card">
+                    <div class="recent-header">
+                        <span class="recent-week">Week 13</span>
+                        <span class="recent-date">Oct 2024</span>
+                    </div>
+                    <h3 class="recent-title">Node.js & Express Backend</h3>
+                    <p class="recent-excerpt">Building RESTful APIs, implementing authentication, and database integration...</p>
+                    <a href="journal.html" class="recent-link">Read More →</a>
+                </div>
+                <div class="recent-card">
+                    <div class="recent-header">
+                        <span class="recent-week">Week 12</span>
+                        <span class="recent-date">Oct 2024</span>
+                    </div>
+                    <h3 class="recent-title">CSS Grid & Flexbox Mastery</h3>
+                    <p class="recent-excerpt">Creating complex layouts with modern CSS techniques and responsive design...</p>
+                    <a href="journal.html" class="recent-link">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LearnJournal</h3>
+                    <p>Documenting the journey of continuous learning and growth.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/vtangri" class="social-link">GitHub</a>
+                        <a href="https://www.linkedin.com/in/vanshika-tangri-47ab07303/" class="social-link">LinkedIn</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LearnJournal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/js/sw.js').then(function (registration) {
+            console.log('ServiceWorker registration successful:', registration);
+          }, function (err) {
+            console.log('ServiceWorker registration failed:', err);
+          });
+        });
+      }
+      // PWA Install Prompt
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        // Show a custom install button or UI here
+        const btn = document.createElement('button');
+        btn.innerText = 'Install My Journal App';
+        btn.className = 'btn btn-primary';
+        btn.style.position = 'fixed';
+        btn.style.bottom = '24px';
+        btn.style.right = '24px';
+        btn.style.zIndex = '2000';
+        btn.onclick = function () {
+          btn.style.display = 'none';
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User installed My Journal App');
+            }
+            deferredPrompt = null;
+          });
+        };
+        document.body.appendChild(btn);
+      });
+    </script>
+</body>
+</html>

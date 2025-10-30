@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Journal - Weekly Entries</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">LearnJournal</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="journal.html" class="nav-link active">Journal</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title fade-in">Learning Journal</h1>
+            <p class="page-subtitle fade-in-delay">14 weeks of continuous growth and discovery</p>
+            
+            <!-- Week Progress Tracker -->
+            <div class="week-tracker fade-in-delay-2">
+                <div class="tracker-info">
+                    <span class="tracker-label">Progress</span>
+                    <span class="tracker-week">Week <span id="currentWeek">14</span> of 14</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal Entries -->
+    <section class="journal-section">
+        <div class="container">
+            <!-- Filter/Sort Options -->
+            <div class="journal-controls">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Search entries...">
+                </div>
+                <select id="sortFilter" class="filter-select">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+            </div>
+
+            <!-- Journal Entries Grid -->
+            <div class="journal-grid" id="journalGrid">
+                <!-- Week 14 -->
+                <article class="journal-card">
+                    <div class="journal-badge">
+                        <span class="badge-week">Week 14</span>
+                        <span class="badge-date">Oct 28, 2024</span>
+                    </div>
+                    <h2 class="journal-title">Advanced React Patterns & Performance</h2>
+                    <div class="journal-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Performance</span>
+                        <span class="tag">Hooks</span>
+                    </div>
+                    <p class="journal-excerpt">
+                        This week I dove deep into advanced React patterns including custom hooks, compound components, 
+                        and render props. Learned about React.memo, useMemo, and useCallback for performance optimization.
+                    </p>
+                    <div class="journal-meta">
+                        <span class="meta-item">📚 5 hours learning</span>
+                        <span class="meta-item">💻 3 projects</span>
+                    </div>
+                    <button class="read-more-btn">Read Full Entry →</button>
+                </article>
+
+                <!-- Week 13 -->
+                <article class="journal-card">
+                    <div class="journal-badge">
+                        <span class="badge-week">Week 13</span>
+                        <span class="badge-date">Oct 21, 2024</span>
+                    </div>
+                    <h2 class="journal-title">Building RESTful APIs with Node.js</h2>
+                    <div class="journal-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <p class="journal-excerpt">
+                        Created a full REST API with Express.js, implemented JWT authentication, and integrated MongoDB. 
+                        Learned about middleware, error handling, and API security best practices.
+                    </p>
+                    <div class="journal-meta">
+                        <span class="meta-item">📚 6 hours learning</span>
+                        <span class="meta-item">💻 2 projects</span>
+                    </div>
+                    <button class="read-more-btn">Read Full Entry →</button>
+                </article>
+
+                <!-- Week 12 -->
+                <article class="journal-card">
+                    <div class="journal-badge">
+                        <span class="badge-week">Week 12</span>
+                        <span class="badge-date">Oct 14, 2024</span>
+                    </div>
+                    <h2 class="journal-title">CSS Grid & Flexbox Mastery</h2>
+                    <div class="journal-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Layout</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                    <p class="journal-excerpt">
+                        Mastered CSS Grid and Flexbox for creating complex, responsive layouts. Built several layout 
+                        patterns and learned when to use Grid vs Flexbox for optimal results.
+                    </p>
+                    <div class="journal-meta">
+                        <span class="meta-item">📚 4 hours learning</span>
+                        <span class="meta-item">💻 4 projects</span>
+                    </div>
+                    <button class="read-more-btn">Read Full Entry →</button>
+                </article>
+
+                <!-- Week 11 -->
+                <article class="journal-card">
+                    <div class="journal-badge">
+                        <span class="badge-week">Week 11</span>
+                        <span class="badge-date">Oct 7, 2024</span>
+                    </div>
+                    <h2 class="journal-title">JavaScript ES6+ Features Deep Dive</h2>
+                    <div class="journal-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">ES6+</span>
+                        <span class="tag">Async</span>
+                    </div>
+                    <p class="journal-excerpt">
+                        Explored modern JavaScript features: destructuring, spread/rest operators, arrow functions, 
+                        promises, async/await, and modules. Refactored old code to use modern syntax.
+                    </p>
+                    <div class="journal-meta">
+                        <span class="meta-item">📚 5 hours learning</span>
+                        <span class="meta-item">💻 3 projects</span>
+                    </div>
+                    <button class="read-more-btn">Read Full Entry →</button>
+                </article>
+
+                <!-- Week 10 -->
+                <article class="journal-card">
+                    <div class="journal-badge">
+                        <span class="badge-week">Week 10</span>
+                        <span class="badge-date">Sep 30, 2024</span>
+                    </div>
+                    <h2 class="journal-title">Git & GitHub Workflow Mastery</h2>
+                    <div class="journal-tags">
+                        <span class="tag">Git</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">DevOps</span>
+                    </div>
+                    <p class="journal-excerpt">
+                        Learned advanced Git commands, branching strategies, rebasing, and collaborative workflows. 
+                        Set up CI/CD pipelines with GitHub Actions and managed pull requests effectively.
+                    </p>
+                    <div class="journal-meta">
+                        <span class="meta-item">📚 4 hours learning</span>
+                        <span class="meta-item">💻 2 projects</span>
+                    </div>
+                    <button class="read-more-btn">Read Full Entry →</button>
+                </article>
+
+                <!-- Week 9 -->
+                <article class="journal-card">
+                    <div class="journal-badge">
+                        <span class="badge-week">Week 9</span>
+                        <span class="badge-date">Sep 23, 2024</span>
+                    </div>
+                    <h2 class="journal-title">Responsive Web Design Principles</h2>
+                    <div class="journal-tags">
+                        <span class="tag">Design</span>
+                        <span class="tag">UX/UI</span>
+                        <span class="tag">Mobile</span>
+                    </div>
+                    <p class="journal-excerpt">
+                        Focused on mobile-first design, media queries, and creating fluid layouts. Learned about 
+                        viewport units, responsive images, and accessibility best practices.
+                    </p>
+                    <div class="journal-meta">
+                        <span class="meta-item">📚 5 hours learning</span>
+                        <span class="meta-item">💻 5 projects</span>
+                    </div>
+                    <button class="read-more-btn">Read Full Entry →</button>
+                </article>
+
+                <!-- Week 8 -->
+                <article class="journal-card">
+                    <div class="journal-badge">
+                        <span class="badge-week">Week 8</span>
+                        <span class="badge-date">Sep 16, 2024</span>
+                    </div>
+                    <h2 class="journal-title">TypeScript Fundamentals</h2>
+                    <div class="journal-tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Types</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <p class="journal-excerpt">
+                        Started learning TypeScript - types, interfaces, generics, and type inference. Converted 
+                        JavaScript projects to TypeScript and understood the benefits of static typing.
+                    </p>
+                    <div class="journal-meta">
+                        <span class="meta-item">📚 6 hours learning</span>
+                        <span class="meta-item">💻 3 projects</span>
+                    </div>
+                    <button class="read-more-btn">Read Full Entry →</button>
+                </article>
+
+                <!-- Week 7 -->
+                <article class="journal-card">
+                    <div class="journal-badge">
+                        <span class="badge-week">Week 7</span>
+                        <span class="badge-date">Sep 9, 2024</span>
+                    </div>
+                    <h2 class="journal-title">Web Animations with CSS & JavaScript</h2>
+                    <div class="journal-tags">
+                        <span class="tag">Animation</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">GSAP</span>
+                    </div>
+                    <p class="journal-excerpt">
+                        Explored CSS animations, transitions, and keyframes. Also learned GSAP for complex animations 
+                        and created smooth, performant animations for web interfaces.
+                    </p>
+                    <div class="journal-meta">
+                        <span class="meta-item">📚 5 hours learning</span>
+                        <span class="meta-item">💻 4 projects</span>
+                    </div>
+                    <button class="read-more-btn">Read Full Entry →</button>
+                </article>
+
+                <!-- Week 6 -->
+                <article class="journal-card">
+                    <div class="journal-badge">
+                        <span class="badge-week">Week 6</span>
+                        <span class="badge-date">Sep 2, 2024</span>
+                    </div>
+                    <h2 class="journal-title">Database Design & SQL</h2>
+                    <div class="journal-tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Database</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                    <p class="journal-excerpt">
+                        Learned database design principles, normalization, and SQL queries. Worked with PostgreSQL, 
+                        created complex queries with joins, and optimized database performance.
+                    </p>
+                    <div class="journal-meta">
+                        <span class="meta-item">📚 6 hours learning</span>
+                        <span class="meta-item">💻 2 projects</span>
+                    </div>
+                    <button class="read-more-btn">Read Full Entry →</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LearnJournal</h3>
+                    <p>Documenting the journey of continuous learning and growth.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/vtangri" class="social-link">GitHub</a>
+                        <a href="https://www.linkedin.com/in/vanshika-tangri-47ab07303/" class="social-link">LinkedIn</a>
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LearnJournal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/journal.js"></script>
+</body>
+</html>
