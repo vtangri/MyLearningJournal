@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="css/styles.css">
     <meta name="theme-color" content="#6366f1">
     <link rel="manifest" href="manifest.json">
+    <!-- Load theme immediately to prevent flash -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                    document.body.classList.add('light-mode');
+                }
+            } catch (e) {
+                // Ignore errors
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation Bar (Injected) -->
@@ -377,7 +391,10 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/about.js"></script>
+    <script src="js/storage.js" defer></script>
+    <script src="js/browser.js" defer></script>
+    <script src="js/thirdparty.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/about.js" defer></script>
 </body>
 </html>

@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Journal - Home</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <meta name="theme-color" content="#6366f1">
+    <meta name="theme-color" content="#282c36">
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Learning Journal PWA - Home</title>
+    <!-- Load theme immediately to prevent flash -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                    document.body.classList.add('light-mode');
+                }
+            } catch (e) {
+                // Ignore errors
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation Bar (Injected) -->
@@ -14,65 +28,67 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title fade-in">Welcome to My Learning Journey</h1>
-                <p class="hero-subtitle fade-in-delay">Documenting progress, one week at a time</p>
-                <div id="timeTicker" aria-label="Current time" style="margin-top:12px; display:flex; align-items:center; gap:10px; margin-bottom:16px;">
-                    <div class="time-box" style="min-width:64px; padding:8px 10px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); border-radius:10px; text-align:center; backdrop-filter: blur(6px);">
-                        <div id="clockHours" style="font-size:20px; font-weight:700;">00</div>
-                        <div style="font-size:11px; color:#6b7280; letter-spacing:1px; text-transform:uppercase;">Hours</div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title fade-in">Welcome to My Learning Journey</h1>
+                    <p class="hero-subtitle fade-in-delay">Documenting progress, one week at a time</p>
+                    <div id="timeTicker" aria-label="Current time" style="margin-top:12px; display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+                        <div class="time-box" style="min-width:64px; padding:8px 10px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); border-radius:10px; text-align:center; backdrop-filter: blur(6px);">
+                            <div id="clockHours" style="font-size:20px; font-weight:700;">00</div>
+                            <div style="font-size:11px; color:#6b7280; letter-spacing:1px; text-transform:uppercase;">Hours</div>
+                        </div>
+                        <div class="time-box" style="min-width:64px; padding:8px 10px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); border-radius:10px; text-align:center; backdrop-filter: blur(6px);">
+                            <div id="clockMinutes" style="font-size:20px; font-weight:700;">00</div>
+                            <div style="font-size:11px; color:#6b7280; letter-spacing:1px; text-transform:uppercase;">Minutes</div>
+                        </div>
+                        <div class="time-box" style="min-width:64px; padding:8px 10px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); border-radius:10px; text-align:center; backdrop-filter: blur(6px);">
+                            <div id="clockSeconds" style="font-size:20px; font-weight:700;">00</div>
+                            <div style="font-size:11px; color:#6b7280; letter-spacing:1px; text-transform:uppercase;">Seconds</div>
+                        </div>
                     </div>
-                    <div class="time-box" style="min-width:64px; padding:8px 10px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); border-radius:10px; text-align:center; backdrop-filter: blur(6px);">
-                        <div id="clockMinutes" style="font-size:20px; font-weight:700;">00</div>
-                        <div style="font-size:11px; color:#6b7280; letter-spacing:1px; text-transform:uppercase;">Minutes</div>
-                    </div>
-                    <div class="time-box" style="min-width:64px; padding:8px 10px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); border-radius:10px; text-align:center; backdrop-filter: blur(6px);">
-                        <div id="clockSeconds" style="font-size:20px; font-weight:700;">00</div>
-                        <div style="font-size:11px; color:#6b7280; letter-spacing:1px; text-transform:uppercase;">Seconds</div>
+                    <div id="currentDate" style="font-size:14px;"></div>
+                    <div class="hero-buttons fade-in-delay-2">
+                        <a href="journal.html" class="btn btn-primary">View Journal</a>
+                        <a href="projects.html" class="btn btn-secondary">Explore Projects</a>
                     </div>
                 </div>
-                <div id="currentDate" style="font-size:14px;"></div>
-                <div class="hero-buttons fade-in-delay-2">
-                    <a href="journal.html" class="btn btn-primary">View Journal</a>
-                    <a href="projects.html" class="btn btn-secondary">Explore Projects</a>
+                <div class="hero-illustration">
+                    <div class="floating-card card-1"></div>
+                    <div class="floating-card card-2"></div>
+                    <div class="floating-card card-3"></div>
                 </div>
-            </div>
-            <div class="hero-illustration">
-                <div class="floating-card card-1"></div>
-                <div class="floating-card card-2"></div>
-                <div class="floating-card card-3"></div>
             </div>
         </div>
     </section>
 
-    <!-- Profile Card -->
+    <!-- Profile Section -->
     <section class="profile-section">
         <div class="container">
             <div class="profile-card glass-effect">
                 <div class="profile-image">
                     <img src="img/image.jpeg" alt="Profile picture of Vanshika Tangri" width="250" height="250" style="border-radius: 50%; object-fit: cover; display: block;" />
                 </div>
-                <div class="profile-info">
+                <div>
                     <h2 class="profile-name">Vanshika Tangri</h2>
                     <p class="profile-title">Web Developer & Lifelong Learner</p>
                     <p class="profile-description">
-                        Welcome to my learning journal! This is where I document my journey through various technologies, 
-                        projects, and skills. Each week, I challenge myself to learn something new and share my experiences, 
-                        insights, and the projects I build along the way.
+                        Passionate about continuous learning and growth. This journal documents my journey through 
+                        modern web development, exploring everything from frontend frameworks to backend architecture. 
+                        Building real-world applications and documenting the process to master new technologies.
                     </p>
                     <div class="profile-stats">
                         <div class="stat">
-                            <span class="stat-number">14</span>
-                            <span class="stat-label">Weeks</span>
+                            <span class="stat-number">14+</span>
+                            <span class="stat-label">Weeks Learning</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">25+</span>
+                            <span class="stat-number">50+</span>
                             <span class="stat-label">Projects</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">100+</span>
-                            <span class="stat-label">Skills Learned</span>
+                            <span class="stat-label">Hours Coding</span>
                         </div>
                     </div>
                 </div>
@@ -80,65 +96,152 @@
         </div>
     </section>
 
-    <!-- Introduction Section -->
+
+    <!-- Intro Section -->
     <section class="intro-section">
         <div class="container">
-            <h2 class="section-title">What You'll Find Here</h2>
+            <h2 class="section-title">Why Keep a Learning Journal?</h2>
             <div class="intro-grid">
                 <div class="intro-card">
                     <div class="intro-icon">📝</div>
-                    <h3>Weekly Journals</h3>
-                    <p>Detailed entries documenting my learning progress, challenges faced, and solutions discovered each week.</p>
+                    <h3>Track Progress</h3>
+                    <p>Document your learning journey and see how far you've come. Track your progress over time and celebrate your achievements.</p>
                 </div>
                 <div class="intro-card">
-                    <div class="intro-icon">💻</div>
-                    <h3>Projects Showcase</h3>
-                    <p>A collection of projects I've built while learning, from simple experiments to complex applications.</p>
+                    <div class="intro-icon">💡</div>
+                    <h3>Reflect & Learn</h3>
+                    <p>Reflect on what you've learned, identify patterns, and reinforce your knowledge through writing and documentation.</p>
                 </div>
                 <div class="intro-card">
-                    <div class="intro-icon">🚀</div>
-                    <h3>Skills & Growth</h3>
-                    <p>Track my progress across various technologies, frameworks, and development practices.</p>
+                    <div class="intro-icon">🎯</div>
+                    <h3>Set Goals</h3>
+                    <p>Set learning goals and track your progress toward achieving them. Stay motivated and focused on your learning objectives.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Recent Entries Preview -->
+    <!-- Twitter API Section -->
+    <section id="twitter-section" class="journal-section" aria-labelledby="twitter-title">
+        <div class="container">
+            <h2 id="twitter-title" class="section-title">Latest Tweets</h2>
+            <div class="twitter-search">
+                <input type="text" id="twitter-search-input" placeholder="Search tweets by keyword (e.g., webdev, javascript, coding)" />
+                <button id="twitter-search-btn" class="btn btn-primary">Search</button>
+            </div>
+            <div id="twitter-feed" class="twitter-feed">
+                <div class="loading-spinner" id="twitter-loading">Loading tweets...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spotify API Section -->
+    <section id="spotify-section" class="journal-section" aria-labelledby="spotify-title">
+        <div class="container">
+            <h2 id="spotify-title" class="section-title">Music Playlists</h2>
+            <div id="spotify-playlists" class="spotify-playlists">
+                <div class="loading-spinner" id="spotify-loading">Loading playlists...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Entries Section -->
     <section class="recent-section">
         <div class="container">
             <h2 class="section-title">Recent Journal Entries</h2>
             <div class="recent-grid">
-                <div class="recent-card">
+                <article class="recent-card">
                     <div class="recent-header">
                         <span class="recent-week">Week 14</span>
-                        <span class="recent-date">Oct 2024</span>
+                        <span class="recent-date">Oct 28, 2024</span>
                     </div>
-                    <h3 class="recent-title">Advanced React Patterns</h3>
-                    <p class="recent-excerpt">Exploring custom hooks, context API, and performance optimization techniques...</p>
+                    <h3 class="recent-title">Advanced React Patterns & Performance</h3>
+                    <p class="recent-excerpt">
+                        This week I dove deep into advanced React patterns including custom hooks, compound components, 
+                        and render props. Learned about React.memo, useMemo, and useCallback for performance optimization.
+                    </p>
                     <a href="journal.html" class="recent-link">Read More →</a>
-                </div>
-                <div class="recent-card">
+                </article>
+                <article class="recent-card">
                     <div class="recent-header">
                         <span class="recent-week">Week 13</span>
-                        <span class="recent-date">Oct 2024</span>
+                        <span class="recent-date">Oct 21, 2024</span>
                     </div>
-                    <h3 class="recent-title">Node.js & Express Backend</h3>
-                    <p class="recent-excerpt">Building RESTful APIs, implementing authentication, and database integration...</p>
+                    <h3 class="recent-title">Building RESTful APIs with Node.js</h3>
+                    <p class="recent-excerpt">
+                        Created a full REST API with Express.js, implemented JWT authentication, and integrated MongoDB. 
+                        Learned about middleware, error handling, and API security best practices.
+                    </p>
                     <a href="journal.html" class="recent-link">Read More →</a>
-                </div>
-                <div class="recent-card">
+                </article>
+                <article class="recent-card">
                     <div class="recent-header">
                         <span class="recent-week">Week 12</span>
-                        <span class="recent-date">Oct 2024</span>
+                        <span class="recent-date">Oct 14, 2024</span>
                     </div>
                     <h3 class="recent-title">CSS Grid & Flexbox Mastery</h3>
-                    <p class="recent-excerpt">Creating complex layouts with modern CSS techniques and responsive design...</p>
+                    <p class="recent-excerpt">
+                        Mastered CSS Grid and Flexbox for creating complex, responsive layouts. Built several layout 
+                        patterns and learned when to use Grid vs Flexbox for optimal results.
+                    </p>
                     <a href="journal.html" class="recent-link">Read More →</a>
-                </div>
+                </article>
             </div>
         </div>
     </section>
+
+    <!-- Journal Entry Form Section (NEW FEATURE) -->
+    <section id="journal-section" class="journal-section" aria-labelledby="journal-section-title">
+        <div class="container">
+            <h2 id="journal-section-title" class="section-title">Create New Journal Entry</h2>
+            <form id="journal-form" class="journal-form" autocomplete="off" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="entry-title">Entry Title</label>
+                        <input type="text" id="entry-title" name="title" required maxlength="100" placeholder="e.g., Learning Web APIs" />
+                    </div>
+                    <div class="form-group">
+                        <label for="entry-date">Date</label>
+                        <input type="date" id="entry-date" name="date" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="entry-content">Content</label>
+                    <textarea id="entry-content" name="content" rows="6" required maxlength="1000" placeholder="Describe what you learned today..."></textarea>
+                    <small class="char-count"><span id="char-count">0</span>/1000 characters</small>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="save-entry" class="btn btn-primary">Save Entry</button>
+                    <button type="button" id="copy-entry" class="btn btn-secondary" style="display: none;">Copy to Clipboard</button>
+                </div>
+                <!-- Feedback area for form validation -->
+                <div id="form-feedback" aria-live="assertive" class="feedback"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Journal Entries Display Section -->
+    <section id="entries-section" class="journal-section" aria-labelledby="entries-title">
+        <div class="container">
+            <h2 id="entries-title" class="section-title">Your Saved Journal Entries</h2>
+            <div id="entries-list" class="entries-list journal-grid">
+                <!-- Dynamically inserted journal entries go here -->
+            </div>
+            <div id="no-entries" class="no-entries" style="display: none;">
+                <p>No entries yet. Create your first journal entry above!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Validation Feedback -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-message">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <h3 id="modal-title"></h3>
+            <p id="modal-message"></p>
+            <button id="modal-close" class="btn btn-primary">Close</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -162,7 +265,6 @@
                     <div class="social-links">
                         <a href="https://github.com/vtangri" class="social-link">GitHub</a>
                         <a href="https://www.linkedin.com/in/vanshika-tangri-47ab07303/" class="social-link">LinkedIn</a>
-                        
                     </div>
                 </div>
             </div>
@@ -172,42 +274,18 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- MAIN SCRIPTS: in dependency order -->
+    <script src="js/storage.js" defer></script>
+    <script src="js/browser.js" defer></script>
+    <script src="js/thirdparty.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <!-- Service Worker registration -->
     <script>
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register('/js/sw.js').then(function (registration) {
-            console.log('ServiceWorker registration successful:', registration);
-          }, function (err) {
-            console.log('ServiceWorker registration failed:', err);
-          });
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('js/sw.js');
         });
       }
-      // PWA Install Prompt
-      let deferredPrompt;
-      window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        // Show a custom install button or UI here
-        const btn = document.createElement('button');
-        btn.innerText = 'Install My Journal App';
-        btn.className = 'btn btn-primary';
-        btn.style.position = 'fixed';
-        btn.style.bottom = '24px';
-        btn.style.right = '24px';
-        btn.style.zIndex = '2000';
-        btn.onclick = function () {
-          btn.style.display = 'none';
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-              console.log('User installed My Journal App');
-            }
-            deferredPrompt = null;
-          });
-        };
-        document.body.appendChild(btn);
-      });
     </script>
 </body>
 </html>
