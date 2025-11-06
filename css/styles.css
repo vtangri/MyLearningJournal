@@ -236,6 +236,21 @@ body {
     margin-bottom: var(--spacing-lg);
 }
 
+/* Time & Date colors by theme */
+body:not(.light-mode) #clockHours,
+body:not(.light-mode) #clockMinutes,
+body:not(.light-mode) #clockSeconds,
+body:not(.light-mode) #currentDate {
+    color: #ffffff;
+}
+
+body.light-mode #clockHours,
+body.light-mode #clockMinutes,
+body.light-mode #clockSeconds,
+body.light-mode #currentDate {
+    color: var(--light-text-primary);
+}
+
 .hero-buttons {
     display: flex;
     gap: var(--spacing-sm);

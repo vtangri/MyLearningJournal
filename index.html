@@ -9,29 +9,8 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">📚</span>
-                <span class="logo-text">LearnJournal</span>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="journal.html" class="nav-link">Journal</a></li>
-                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-            </ul>
-            <button class="theme-toggle" id="themeToggle">
-                <span class="theme-icon">🌙</span>
-            </button>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation Bar (Injected) -->
+    <div id="nav"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -39,6 +18,21 @@
             <div class="hero-text">
                 <h1 class="hero-title fade-in">Welcome to My Learning Journey</h1>
                 <p class="hero-subtitle fade-in-delay">Documenting progress, one week at a time</p>
+                <div id="timeTicker" aria-label="Current time" style="margin-top:12px; display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+                    <div class="time-box" style="min-width:64px; padding:8px 10px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); border-radius:10px; text-align:center; backdrop-filter: blur(6px);">
+                        <div id="clockHours" style="font-size:20px; font-weight:700;">00</div>
+                        <div style="font-size:11px; color:#6b7280; letter-spacing:1px; text-transform:uppercase;">Hours</div>
+                    </div>
+                    <div class="time-box" style="min-width:64px; padding:8px 10px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); border-radius:10px; text-align:center; backdrop-filter: blur(6px);">
+                        <div id="clockMinutes" style="font-size:20px; font-weight:700;">00</div>
+                        <div style="font-size:11px; color:#6b7280; letter-spacing:1px; text-transform:uppercase;">Minutes</div>
+                    </div>
+                    <div class="time-box" style="min-width:64px; padding:8px 10px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25); border-radius:10px; text-align:center; backdrop-filter: blur(6px);">
+                        <div id="clockSeconds" style="font-size:20px; font-weight:700;">00</div>
+                        <div style="font-size:11px; color:#6b7280; letter-spacing:1px; text-transform:uppercase;">Seconds</div>
+                    </div>
+                </div>
+                <div id="currentDate" style="font-size:14px;"></div>
                 <div class="hero-buttons fade-in-delay-2">
                     <a href="journal.html" class="btn btn-primary">View Journal</a>
                     <a href="projects.html" class="btn btn-secondary">Explore Projects</a>

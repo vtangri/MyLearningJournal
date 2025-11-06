@@ -9,29 +9,8 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">📚</span>
-                <span class="logo-text">LearnJournal</span>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="journal.html" class="nav-link active">Journal</a></li>
-                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-            </ul>
-            <button class="theme-toggle" id="themeToggle">
-                <span class="theme-icon">🌙</span>
-            </button>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation Bar (Injected) -->
+    <div id="nav"></div>
 
     <!-- Page Header -->
     <section class="page-header">
@@ -49,6 +28,60 @@
                     <div class="progress-fill" id="progressFill"></div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Add Journal Entry Form (After Journal Cards) -->
+    <section class="journal-add-section">
+        <div class="container">
+            <h2 class="section-title">Add a New Journal Entry</h2>
+            <form id="journalForm" class="journal-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="weekOfJournal">Week Of Journal</label>
+                        <input type="number" id="weekOfJournal" name="weekOfJournal" min="1" placeholder="e.g., 15" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="journalName">My Journal Name</label>
+                        <input type="text" id="journalName" name="journalName" placeholder="e.g., Learning Web APIs" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="journalDate">My Journal Date</label>
+                        <input type="date" id="journalDate" name="journalDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskName">Journal Task Name</label>
+                        <input type="text" id="taskName" name="taskName" placeholder="e.g., Built a fetch wrapper" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskDescription">Journal Task Description (min 10 words)</label>
+                    <textarea id="taskDescription" name="taskDescription" rows="4" placeholder="Describe what you did and learned..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Technologies Used</label>
+                    <div class="checkbox-group" id="technologies">
+                        <label><input type="checkbox" value="HTML"> HTML</label>
+                        <label><input type="checkbox" value="CSS"> CSS</label>
+                        <label><input type="checkbox" value="JavaScript"> JavaScript</label>
+                        <label><input type="checkbox" value="PWA"> PWA</label>
+                        <label><input type="checkbox" value="Manifest"> Manifest</label>
+                        <label><input type="checkbox" value="Responsive Design"> Responsive Design</label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Journal Entry</button>
+                </div>
+
+                <p id="formError" style="color:#dc2626; margin-top:12px; display:none;"></p>
+                <p id="formSuccess" style="color:#16a34a; margin-top:12px; display:none;"></p>
+            </form>
         </div>
     </section>
 
