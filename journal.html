@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
     <link rel="manifest" href="manifest.json">
     <!-- Load theme immediately to prevent flash -->
     <script>
-        (function() {
+        (function () {
             try {
                 const savedTheme = localStorage.getItem('theme') || 'dark';
                 if (savedTheme === 'light') {
@@ -22,6 +23,7 @@
         })();
     </script>
 </head>
+
 <body>
     <!-- Navigation Bar (Injected) -->
     <div id="nav"></div>
@@ -31,7 +33,7 @@
         <div class="container">
             <h1 class="page-title fade-in">Learning Journal</h1>
             <p class="page-subtitle fade-in-delay">14 weeks of continuous growth and discovery</p>
-            
+
             <!-- Week Progress Tracker -->
             <div class="week-tracker fade-in-delay-2">
                 <div class="tracker-info">
@@ -40,6 +42,17 @@
                 </div>
                 <div class="progress-bar">
                     <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <!-- Entry Counter Stats -->
+            <div class="stats-container fade-in-delay-3"
+                style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 2rem;">
+                <div class="stat-item" style="text-align: center;">
+                    <div class="stat-number" id="totalEntries"
+                        style="font-size: 2.5rem; font-weight: 700; color: #6366f1;">0</div>
+                    <div class="stat-label" style="font-size: 0.875rem; color: #888; margin-top: 0.25rem;">Total Entries
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,11 +66,13 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="weekOfJournal">Week Of Journal</label>
-                        <input type="number" id="weekOfJournal" name="weekOfJournal" min="1" placeholder="e.g., 15" required>
+                        <input type="number" id="weekOfJournal" name="weekOfJournal" min="1" placeholder="e.g., 15"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="journalName">My Journal Name</label>
-                        <input type="text" id="journalName" name="journalName" placeholder="e.g., Learning Web APIs" required>
+                        <input type="text" id="journalName" name="journalName" placeholder="e.g., Learning Web APIs"
+                            required>
                     </div>
                 </div>
 
@@ -68,13 +83,15 @@
                     </div>
                     <div class="form-group">
                         <label for="taskName">Journal Task Name</label>
-                        <input type="text" id="taskName" name="taskName" placeholder="e.g., Built a fetch wrapper" required>
+                        <input type="text" id="taskName" name="taskName" placeholder="e.g., Built a fetch wrapper"
+                            required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="taskDescription">Journal Task Description (min 10 words)</label>
-                    <textarea id="taskDescription" name="taskDescription" rows="4" placeholder="Describe what you did and learned..." required></textarea>
+                    <textarea id="taskDescription" name="taskDescription" rows="4"
+                        placeholder="Describe what you did and learned..." required></textarea>
                 </div>
 
                 <div class="form-group">
@@ -100,7 +117,8 @@
     </section>
 
     <!-- Modal for Success Alert -->
-    <div id="journal-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="journal-modal-title" aria-describedby="journal-modal-message">
+    <div id="journal-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="journal-modal-title"
+        aria-describedby="journal-modal-message">
         <div class="modal-overlay"></div>
         <div class="modal-content">
             <div class="modal-icon" style="font-size: 4rem; text-align: center; margin-bottom: 1rem;">✅</div>
@@ -123,6 +141,29 @@
                     <option value="newest">Newest First</option>
                     <option value="oldest">Oldest First</option>
                 </select>
+
+                <!-- Export Button -->
+                <button id="exportBtn" class="btn btn-secondary"
+                    style="padding: 0.75rem 1.5rem; background: #10b981; border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
+                    📥 Export JSON
+                </button>
+            </div>
+
+            <!-- Date Filter Controls -->
+            <div class="filter-controls"
+                style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                <input type="date" id="filterStartDate" class="filter-input" placeholder="From date"
+                    style="padding: 0.75rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a; color: #fff;">
+                <input type="date" id="filterEndDate" class="filter-input" placeholder="To date"
+                    style="padding: 0.75rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a; color: #fff;">
+                <button id="applyDateFilter" class="btn btn-secondary"
+                    style="padding: 0.75rem 1.5rem; background: #6366f1; border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: 600;">
+                    Apply Filter
+                </button>
+                <button id="clearFilters" class="btn btn-secondary"
+                    style="padding: 0.75rem 1.5rem; background: #ef4444; border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: 600;">
+                    Clear Filters
+                </button>
             </div>
 
             <!-- Journal Entries Grid -->
@@ -140,8 +181,9 @@
                         <span class="tag">Hooks</span>
                     </div>
                     <p class="journal-excerpt">
-                        This week I dove deep into advanced React patterns including custom hooks, compound components, 
-                        and render props. Learned about React.memo, useMemo, and useCallback for performance optimization.
+                        This week I dove deep into advanced React patterns including custom hooks, compound components,
+                        and render props. Learned about React.memo, useMemo, and useCallback for performance
+                        optimization.
                     </p>
                     <div class="journal-meta">
                         <span class="meta-item">📚 5 hours learning</span>
@@ -163,7 +205,7 @@
                         <span class="tag">MongoDB</span>
                     </div>
                     <p class="journal-excerpt">
-                        Created a full REST API with Express.js, implemented JWT authentication, and integrated MongoDB. 
+                        Created a full REST API with Express.js, implemented JWT authentication, and integrated MongoDB.
                         Learned about middleware, error handling, and API security best practices.
                     </p>
                     <div class="journal-meta">
@@ -186,7 +228,7 @@
                         <span class="tag">Responsive</span>
                     </div>
                     <p class="journal-excerpt">
-                        Mastered CSS Grid and Flexbox for creating complex, responsive layouts. Built several layout 
+                        Mastered CSS Grid and Flexbox for creating complex, responsive layouts. Built several layout
                         patterns and learned when to use Grid vs Flexbox for optimal results.
                     </p>
                     <div class="journal-meta">
@@ -209,7 +251,7 @@
                         <span class="tag">Async</span>
                     </div>
                     <p class="journal-excerpt">
-                        Explored modern JavaScript features: destructuring, spread/rest operators, arrow functions, 
+                        Explored modern JavaScript features: destructuring, spread/rest operators, arrow functions,
                         promises, async/await, and modules. Refactored old code to use modern syntax.
                     </p>
                     <div class="journal-meta">
@@ -232,7 +274,7 @@
                         <span class="tag">DevOps</span>
                     </div>
                     <p class="journal-excerpt">
-                        Learned advanced Git commands, branching strategies, rebasing, and collaborative workflows. 
+                        Learned advanced Git commands, branching strategies, rebasing, and collaborative workflows.
                         Set up CI/CD pipelines with GitHub Actions and managed pull requests effectively.
                     </p>
                     <div class="journal-meta">
@@ -255,7 +297,7 @@
                         <span class="tag">Mobile</span>
                     </div>
                     <p class="journal-excerpt">
-                        Focused on mobile-first design, media queries, and creating fluid layouts. Learned about 
+                        Focused on mobile-first design, media queries, and creating fluid layouts. Learned about
                         viewport units, responsive images, and accessibility best practices.
                     </p>
                     <div class="journal-meta">
@@ -278,7 +320,7 @@
                         <span class="tag">JavaScript</span>
                     </div>
                     <p class="journal-excerpt">
-                        Started learning TypeScript - types, interfaces, generics, and type inference. Converted 
+                        Started learning TypeScript - types, interfaces, generics, and type inference. Converted
                         JavaScript projects to TypeScript and understood the benefits of static typing.
                     </p>
                     <div class="journal-meta">
@@ -301,7 +343,7 @@
                         <span class="tag">GSAP</span>
                     </div>
                     <p class="journal-excerpt">
-                        Explored CSS animations, transitions, and keyframes. Also learned GSAP for complex animations 
+                        Explored CSS animations, transitions, and keyframes. Also learned GSAP for complex animations
                         and created smooth, performant animations for web interfaces.
                     </p>
                     <div class="journal-meta">
@@ -324,7 +366,7 @@
                         <span class="tag">PostgreSQL</span>
                     </div>
                     <p class="journal-excerpt">
-                        Learned database design principles, normalization, and SQL queries. Worked with PostgreSQL, 
+                        Learned database design principles, normalization, and SQL queries. Worked with PostgreSQL,
                         created complex queries with joins, and optimized database performance.
                     </p>
                     <div class="journal-meta">
@@ -358,8 +400,9 @@
                     <h4>Connect</h4>
                     <div class="social-links">
                         <a href="https://github.com/vtangri" class="social-link">GitHub</a>
-                        <a href="https://www.linkedin.com/in/vanshika-tangri-47ab07303/" class="social-link">LinkedIn</a>
-                     
+                        <a href="https://www.linkedin.com/in/vanshika-tangri-47ab07303/"
+                            class="social-link">LinkedIn</a>
+
                     </div>
                 </div>
             </div>
@@ -375,4 +418,5 @@
     <script src="js/script.js" defer></script>
     <script src="js/journal.js" defer></script>
 </body>
+
 </html>
